@@ -1,24 +1,23 @@
 import { useEffect, useState } from 'react'
 import axios from "axios"
 import useLocalStorage from './useLocalStorage'
-import { API_URL } from '../variables'
 
-export default function useStarshipFetch(pageNumber){
-  const [loading, setLoading] = useLocalStorage("useStarshipFetch-loading", true)
-  const [error, setError] = useLocalStorage("useStarshipFetch-error",false)
+export default function useInfiniteScroll(apiUrl, key, pageNumber){
+  const [loading, setLoading] = useLocalStorage(`${key}-loading`, true)
+  const [error, setError] = useLocalStorage(`${key}-error`,false)
   const [list, setList] = useState(() => {
     try {
-      const item = window.localStorage.getItem("useStarshipFetch-list");
+      const item = window.localStorage.getItem(`${key}-list`);
       return item ? JSON.parse(item) : [];
     } catch (e) {
       return [];
     }
   })
-  const [hasMore, setHasMore] = useLocalStorage("useStarshipFetch-hasMore",true)
+  const [hasMore, setHasMore] = useLocalStorage(`${key}-hasMore`,true)
 
   useEffect(() => 
-    window.localStorage.setItem("useStarshipFetch-list", JSON.stringify(list)),
-    [list]
+    window.localStorage.setItem(`${key}-list`, JSON.stringify(list)),
+    [list, key]
   )
 
   useEffect(() => {
@@ -28,12 +27,12 @@ export default function useStarshipFetch(pageNumber){
     let cancel
     axios({
       method: 'GET',
-      url: API_URL,
+      url: apiUrl,
       params: { page: pageNumber },
       cancelToken: new axios.CancelToken(c => cancel = c)
     }).then(res => {
-      setList(prevStarships => {
-        return [...prevStarships, ...res.data.results]
+      setList(prevList => {
+        return [...prevList, ...res.data.results]
       })
       setHasMore(res.data.next ? true : false)
       setLoading(false)
@@ -47,3 +46,4 @@ export default function useStarshipFetch(pageNumber){
 
   return { loading, error, list, hasMore }  
 }
+
