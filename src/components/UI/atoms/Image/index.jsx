@@ -1,8 +1,16 @@
 import { LazyLoadImage } from "react-lazy-load-image-component";
-import "react-lazy-load-image-component/src/effects/blur.css";
+import imgNotFound from "../../../../assets/NOPOKEHERE.png";
 
-const Image = ({ image }) => {
-  return <LazyLoadImage alt={image.alt} effect="blur" src={image.src} />;
+const Image = (props) => {
+  return (
+    <LazyLoadImage
+      {...props}
+      onError={({ currentTarget }) => {
+        currentTarget.onerror = null; // prevents looping
+        currentTarget.src = imgNotFound;
+      }}
+    />
+  );
 };
 
 export default Image;
