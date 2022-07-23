@@ -1,0 +1,14 @@
+.TypeFilterBoxChecked, .TypeFilterBoxUnchecked{
+  border: 1px solid var(--primary-color);
+  border-radius: 0.25rem;
+  padding: 0.3rem 0.5rem ;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.TypeFilterBoxChecked{
+  background-color: rgb(255, 212, 104);
+}
+.TypeFilterBoxUnchecked{
+  background-color: var(--background-color);
+}

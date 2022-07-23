@@ -1,0 +1,13 @@
+body{
+  --primary-color: #263238;
+  --primary-font-family: Lato,sans-serif;
+  --background-color: #fbfbfb;
+}
+
+body{
+  font-family: var(--primary-font-family);
+  line-height: 1.35;
+  background-color: var(--background-color);
+  color: var(--primary-color);
+  margin: 0;
+}

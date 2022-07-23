@@ -1,0 +1,15 @@
+.PokeGallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1rem;
+}
+
+.PokeElement {
+  text-align: center;
+  text-transform: uppercase;
+  padding: 1rem;
+  -webkit-box-shadow: 3px 3px 8px 1px #000000;
+  box-shadow: 3px 3px 8px 1px #000000;
+}
