@@ -1,12 +1,12 @@
 import { useState } from "react";
-import PokemonPageTemplate from "../templates/PokemonPageTemplate";
+import PokemonListPageTemplate from "../templates/PokemonListPageTemplate";
 
-const PokemonPage = () => {
+const PokemonListPage = () => {
   const [typeSelected, setTypeSelected] = useState({ name: "ALL", url: "" })
   const [pokeList, setPokeList] = useState(false)
   const [search, setSearch] = useState("");
   return (
-    <PokemonPageTemplate
+    <PokemonListPageTemplate
       typeSelected={typeSelected}
       setTypeSelected={setTypeSelected}
       pokeList={pokeList}
@@ -17,4 +17,4 @@ const PokemonPage = () => {
   );
 };
 
-export default PokemonPage;
+export default PokemonListPage;

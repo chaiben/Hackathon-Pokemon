@@ -5,8 +5,9 @@ import TypeFilterMenu from "../../UI/organisms/TypeFilterMenu";
 import PokeService from "../../../services/PokeService";
 import { useState, useEffect } from "react";
 import PokeGalery from "../../UI/molecules/PokeGalery";
+import { IMAGE_EXTENSION, URL_IMAGE } from "../../../constants";
 
-const PokemonPageTemplate = (props) => {
+const PokemonListPageTemplate = (props) => {
   const {
     typeSelected,
     setTypeSelected,
@@ -47,7 +48,7 @@ const PokemonPageTemplate = (props) => {
       return {
         alt: poke.name,
         key: poke.name + "_" + index,
-        src: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${code}.png`,
+        src: `${URL_IMAGE}${code}.${IMAGE_EXTENSION}`,
         width: "100px",
         height: "100px",
         code: code
@@ -55,7 +56,7 @@ const PokemonPageTemplate = (props) => {
     });
 
   return (
-    <main className={style.PokemonPageTemplate}>
+    <main className={style.PokemonListPageTemplate}>
       <header>
         <H1>Pokemon</H1>
         <SearchBox search={search} setSearch={setSearch} />
@@ -75,4 +76,4 @@ const PokemonPageTemplate = (props) => {
   );
 };
 
-export default PokemonPageTemplate;
+export default PokemonListPageTemplate;

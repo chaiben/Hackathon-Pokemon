@@ -1,6 +1,7 @@
 import "./App.css";
 import { HashRouter, Route, Routes} from 'react-router-dom';
-import PokemonPage from "./components/pages/PokemonPage";
+import PokemonListPage from "./components/pages/PokemonListPage";
+import PokemonDetailsPage from "./components/pages/PokemonDetailsPage";
 
 function App() {
   return (
@@ -8,11 +9,11 @@ function App() {
       <Routes>
         <Route
           path="/"
-          element={<PokemonPage />}
+          element={<PokemonListPage />}
         ></Route>
         <Route
           path="/:id"
-          element={<div>PokeInfo</div>}
+          element={<PokemonDetailsPage />}
         />
       </Routes>
     </HashRouter>
