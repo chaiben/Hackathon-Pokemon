@@ -2,14 +2,19 @@ import {
   LazyLoadImage,
   trackWindowScroll,
 } from "react-lazy-load-image-component";
+import { useNavigate } from "react-router-dom";
 import Label from "../../atoms/Label";
 import style from "./style.module.css";
 
 const PokeGallery = ({ images, scrollPosition }) => {
+  let navigate = useNavigate()
+  const onClickHandler = (code) => {
+    navigate(code);
+  } 
   return (
   <div className={style.PokeGallery}>
     {images.map((image) => (
-      <div className={style.PokeElement} key={image.alt}>
+      <div className={style.PokeElement} key={image.alt} onClick={() => onClickHandler(image.code)} >
         <Label key={`label_${image.key}`}>{image.alt}</Label>
         <LazyLoadImage
           key={`img_${image.key}`}

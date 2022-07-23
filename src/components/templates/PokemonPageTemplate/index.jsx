@@ -38,6 +38,8 @@ const PokemonPageTemplate = (props) => {
     fetchPokes();
   }, [search, pokeService, typeSelected, setPokeList]);
 
+
+  // Function to format images to the galery
   const formatPokes = (list) =>
     list.map((poke, index) => {
       let aux = poke.url.split("/");
@@ -48,6 +50,7 @@ const PokemonPageTemplate = (props) => {
         src: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${code}.png`,
         width: "100px",
         height: "100px",
+        code: code
       };
     });
 

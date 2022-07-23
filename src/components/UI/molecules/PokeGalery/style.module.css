@@ -12,4 +12,11 @@
   padding: 1rem;
   -webkit-box-shadow: 3px 3px 8px 1px #000000;
   box-shadow: 3px 3px 8px 1px #000000;
+  cursor: pointer;
+}
+
+.PokeElement:hover {
+  -webkit-box-shadow: 3px 3px 8px 1px #333;
+  box-shadow: 3px 3px 8px 1px #333;
+  background-color: #ddd;
 }
