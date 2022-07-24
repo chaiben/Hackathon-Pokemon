@@ -1,0 +1,16 @@
+.PokeCard{
+  display: flex;
+  margin: 0;
+  gap: 1rem;
+  align-items: center;
+  align-self: flex-start;
+  border: 1px solid var(--primary-color);
+  border-radius: 0.25rem;
+  padding: 1rem;
+  background-color: var(--background-color);
+  cursor: pointer;
+}
+.PokeCard div {
+  margin: auto;
+  text-align: center;
+}

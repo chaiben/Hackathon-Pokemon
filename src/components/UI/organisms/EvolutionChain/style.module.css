@@ -1,0 +1,16 @@
+.EvolutionChain{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: space-evenly;
+  background-color: var( --secondary-background-color);
+  padding: 1rem;
+  border-radius: 0.25rem;
+}
+.PokeCardGalery{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: space-evenly;
+}

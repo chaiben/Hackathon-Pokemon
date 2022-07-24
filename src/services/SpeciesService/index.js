@@ -47,6 +47,10 @@ class SpeciesService {
   get varieties() {
     return this.species.varieties.map(value => value.pokemon.name)
   }
+
+  get evolution_chain_url() {
+    return this.species.evolution_chain.url
+  }
 }
 
 export default SpeciesService;

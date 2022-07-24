@@ -6,12 +6,15 @@ import style from "./style.module.css";
 import PokeBasicInfo from "../../UI/organisms/PokeBasicInfo";
 import { useNavigate } from "react-router-dom";
 import SpeciesService from "../../../services/SpeciesService";
+import EvolutionService from "../../../services/EvolutionService";
 import SpeciesInfo from "../../UI/organisms/SpeciesInfo";
+import EvolutionChain from "../../UI/organisms/EvolutionChain";
 
 const PokemonDetailsPageTemplate = (props) => {
   const { id } = props;
   const [poke, setPoke] = useState(false);
   const [species, setSpecies] = useState(false);
+  const [evolution, setEvolution] = useState(false);
   const navigate = useNavigate();
 
   // Get Poke Info
@@ -34,7 +37,21 @@ const PokemonDetailsPageTemplate = (props) => {
     }
   }, [poke]);
 
-  if (!poke && !species) return <div>Loading...</div>;
+  // Get Evolution Info
+  useEffect(() => {
+    if (species) {
+      const fetchPoke = async () => {
+        const response = await EvolutionService.init(species.evolution_chain_url);
+
+        setEvolution(response);
+      };
+      fetchPoke();
+    }
+  }, [species]);
+
+  if (!poke || !species || !evolution) return <div>Loading...</div>;
+  
+  const evolution_chain  = evolution.evolutionChain(evolution.chain);
 
   return (
     <main className={style.PokemonDetailsPageTemplate}>
@@ -44,6 +61,7 @@ const PokemonDetailsPageTemplate = (props) => {
       </header>
       <PokeBasicInfo poke={poke} />
       <SpeciesInfo species={species} />
+      <EvolutionChain chain = {evolution_chain} />
     </main>
   );
 };
