@@ -1,30 +1,32 @@
 import { API_URL_GETPOKE } from "../../constants";
 import APIService from "../APIService";
 
-class PokeDetailsService extends APIService {
-  constructor(){
-    super()
-      this.id = false
-      this.poke = false
+class PokeDetailsService {
+  constructor(id, poke) {
+    if (typeof id === 'undefined' || typeof poke === 'undefined') {
+      throw new Error('Cannot be called directly');
+    }
+
+    this.id = id;
+    this.poke = poke;
   }
 
-  async getPoke(id) {
-    if(this.id)
-      return this
-    
-    this.id=id
-    const response = await this.APICall(`${API_URL_GETPOKE}${id}/`)
-    this.poke = response.data
-    return this
+  static async init(id) {
+    const apiService = new APIService();
+    const response = await apiService.APICall(`${API_URL_GETPOKE}${id}/`);
+
+    return new PokeDetailsService(id, response.data);
   }
 
-  get height(){
-    return this.poke.height
+  get name() {
+    return this.poke.name;
   }
-  get weight(){
-    return this.poke.weight
+  get height() {
+    return this.poke.height;
   }
-
+  get weight() {
+    return this.poke.weight;
+  }
 }
 
-export default new PokeDetailsService()
+export default PokeDetailsService;
