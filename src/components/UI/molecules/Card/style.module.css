@@ -9,4 +9,5 @@
 }
 .Card div, .Card h2 {
   margin: auto;
+  text-align: center;
 }

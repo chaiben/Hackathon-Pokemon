@@ -51,6 +51,10 @@ class PokeDetailsService {
       value: item.base_stat,
     }));
   }
+
+  get speciesURL() {
+    return this.poke.species.url;
+  }
 }
 
 export default PokeDetailsService;

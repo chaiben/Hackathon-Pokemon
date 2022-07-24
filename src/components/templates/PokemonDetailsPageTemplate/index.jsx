@@ -5,13 +5,16 @@ import LinkButton from "../../UI/atoms/LinkButton";
 import style from "./style.module.css";
 import PokeBasicInfo from "../../UI/organisms/PokeBasicInfo";
 import { useNavigate } from "react-router-dom";
+import SpeciesService from "../../../services/SpeciesService";
+import SpeciesInfo from "../../UI/organisms/SpeciesInfo";
 
 const PokemonDetailsPageTemplate = (props) => {
   const { id } = props;
   const [poke, setPoke] = useState(false);
+  const [species, setSpecies] = useState(false);
   const navigate = useNavigate();
 
-  // Init Pokes List
+  // Get Poke Info
   useEffect(() => {
     const fetchPoke = async () => {
       const response = await PokeDetailsService.init(id);
@@ -19,17 +22,28 @@ const PokemonDetailsPageTemplate = (props) => {
     };
     fetchPoke();
   }, [id]);
-  console.log(poke);
 
-  if (!poke) return <div>Loading...</div>;
+  // Get Spicies Info
+  useEffect(() => {
+    if (poke) {
+      const fetchPoke = async () => {
+        const response = await SpeciesService.init(poke.speciesURL);
+        setSpecies(response);
+      };
+      fetchPoke();
+    }
+  }, [poke]);
+
+  if (!poke && !species) return <div>Loading...</div>;
 
   return (
     <main className={style.PokemonDetailsPageTemplate}>
       <header>
         <H1>{poke.name.toUpperCase()}</H1>
-        <LinkButton onClick={()=>navigate(-1)}>Go Back</LinkButton>
+        <LinkButton onClick={() => navigate(-1)}>Go Back</LinkButton>
       </header>
       <PokeBasicInfo poke={poke} />
+      <SpeciesInfo species={species} />
     </main>
   );
 };
