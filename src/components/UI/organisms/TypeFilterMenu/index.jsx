@@ -8,7 +8,7 @@ const TypeFilterMenu = (props) => {
       <TypeButton
         setTypeSelected={setTypeSelected}
         value={{ name: "ALL", url: "" }}
-        checked={!typeSelected || typeSelected.name === "ALL" ? "1" : "0"}
+        checked={!typeSelected || typeSelected === "ALL" ? "1" : "0"}
       >
         ALL
       </TypeButton>
@@ -18,7 +18,7 @@ const TypeFilterMenu = (props) => {
             setTypeSelected={setTypeSelected}
             value={{ name: name, url: url }}
             key={name}
-            checked={typeSelected.name === name ? "1" : "0"}
+            checked={typeSelected === name ? "1" : "0"}
           >
             {name}
           </TypeButton>

@@ -8,7 +8,7 @@ const TypeButton = (props) => {
       ? "TypeFilterBoxChecked"
       : "TypeFilterBoxUnchecked";
   return (
-    <div className={style[className]} onClick={() => setTypeSelected(value)}>
+    <div className={style[className]} onClick={() => setTypeSelected(value.name)}>
       <Label>{children}</Label>
     </div>
   );

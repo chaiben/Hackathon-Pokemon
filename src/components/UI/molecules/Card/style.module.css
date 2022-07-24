@@ -1,0 +1,12 @@
+.Card{
+  display: flex;
+  max-width: 10rem;
+  margin: 0;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: flex-start;
+  align-self: flex-start;
+}
+.Card div, .Card h2 {
+  margin: auto;
+}

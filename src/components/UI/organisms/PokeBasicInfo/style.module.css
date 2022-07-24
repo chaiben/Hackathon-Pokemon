@@ -1,0 +1,27 @@
+.PokeBasicInfo{
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background-color: var(--secondary-background-color);
+  padding: 1rem;
+  border-radius: 0.25rem;
+  flex-grow: 3;
+}
+.basicInfo{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: space-evenly;
+  flex-grow: 1;
+  flex-direction: column;
+}
+.PokeBasicInfo aside{
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+}
+
+.PokeBasicInfo aside img {
+  max-width: 250px;
+}

@@ -32,13 +32,20 @@ const PokemonListPageTemplate = (props) => {
 
   // Init Pokes List
   useEffect(() => {
-    const fetchPokes = async () => {
-      const response = await pokeService.getPokeList(typeSelected.url, search);
-      setPokeList(response);
-    };
-    fetchPokes();
-  }, [search, pokeService, typeSelected, setPokeList]);
-
+    if (typeList) {
+      const fetchPokes = async () => {
+        const selectedTypeData = typeList.find(
+          (type) => type.name === typeSelected
+        );
+        const response = await pokeService.getPokeList(
+          selectedTypeData ? selectedTypeData.url : "",
+          search
+        );
+        setPokeList(response);
+      };
+      fetchPokes();
+    }
+  }, [search, pokeService, typeSelected, setPokeList, typeList]);
 
   // Function to format images to the galery
   const formatPokes = (list) =>
@@ -51,7 +58,7 @@ const PokemonListPageTemplate = (props) => {
         src: `${URL_IMAGE}${code}.${IMAGE_EXTENSION}`,
         width: "100px",
         height: "100px",
-        code: code
+        code: code,
       };
     });
 
