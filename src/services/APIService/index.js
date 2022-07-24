@@ -7,13 +7,12 @@ class APIService  {
   }
 
   async APICall(url){
-    const response = await axios({
+    return await axios({
       method: 'GET',
       url: url
     }).catch(e => {
       console.error(e.response.data.detail)
     })
-    return response
   }
 }
 

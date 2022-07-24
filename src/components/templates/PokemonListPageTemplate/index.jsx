@@ -1,4 +1,3 @@
-import style from "./style.module.css";
 import H1 from "../../UI/atoms/H1";
 import SearchBox from "../../UI/molecules/SearchBox";
 import TypeFilterMenu from "../../UI/organisms/TypeFilterMenu";
@@ -63,7 +62,7 @@ const PokemonListPageTemplate = (props) => {
     });
 
   return (
-    <main className={style.PokemonListPageTemplate}>
+    <main>
       <header>
         <H1>Pokemon</H1>
         <SearchBox search={search} setSearch={setSearch} />

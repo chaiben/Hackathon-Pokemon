@@ -43,11 +43,7 @@ class PokeService extends APIService {
     }
 
     // Filter list
-    const filteredResult = [...result].filter(item => {
-      return item.name.toLowerCase().includes(search)
-    });
-
-    return filteredResult
+    return [...result].filter(item => item.name.toLowerCase().includes(search));
   }
 }
 

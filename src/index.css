@@ -3,9 +3,7 @@ body{
   --primary-font-family: Lato,sans-serif;
   --background-color: #fbfbfb;
   --secondary-background-color: #cccccc;
-}
-
-body{
+  
   font-family: var(--primary-font-family);
   line-height: 1.35;
   background-color: var(--background-color);
