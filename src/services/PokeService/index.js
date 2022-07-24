@@ -1,20 +1,11 @@
-import axios from "axios";
 import { API_URL_GETALLPOKES, API_URL_GETALLTYPES } from "../../constants";
+import APIService from "../APIService";
 
-class PokeService {
+class PokeService extends APIService {
   constructor(){
+    super()
     this.allPoke = false;
     this.allTypes = false;
-  }
-
-  async APICall(url){
-    const response = await axios({
-      method: 'GET',
-      url: url
-    }).catch(e => {
-      console.error(e.response.data.detail)
-    })
-    return response
   }
 
   async getAllPoke() {
