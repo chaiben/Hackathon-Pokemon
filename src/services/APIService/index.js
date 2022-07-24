@@ -7,7 +7,7 @@ class APIService  {
   }
 
   async APICall(url){
-    return await axios({
+    return axios({
       method: 'GET',
       url: url
     }).catch(e => {
