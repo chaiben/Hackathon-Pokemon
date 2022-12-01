@@ -1,4 +1,4 @@
-# Repte 4: Poke App
+# Hackathon-Pokemon
 
 
 ## Descripción
@@ -14,7 +14,7 @@ Además para ese proyecto se utilizó
 
 Puedes buscar un Poke o filtrarlos por tipo. 
 
-[Ver app](https://chaiben.github.io/Hackathon-Pokemon/)
+[Ver la Hackathon-Pokemon](https://chaiben.github.io/Hackathon-Pokemon/)
 
 
 ## Referencias
