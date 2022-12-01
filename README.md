@@ -14,7 +14,7 @@ Además para ese proyecto se utilizó
 
 Puedes buscar un Poke o filtrarlos por tipo. 
 
-[Aqui puedes ver el proyecto funcionando](https://chaiben.github.io/repte-4-utilitzar-api-pokemon/)
+[Ver app](https://chaiben.github.io/Hackathon-Pokemon/)
 
 
 ## Referencias
