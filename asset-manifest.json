@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/repte-4-utilitzar-api-pokemon/static/css/main.ed7f72c8.css",
-    "main.js": "/repte-4-utilitzar-api-pokemon/static/js/main.409529f4.js",
-    "static/js/787.b701888c.chunk.js": "/repte-4-utilitzar-api-pokemon/static/js/787.b701888c.chunk.js",
-    "static/media/NOPOKEHERE.png": "/repte-4-utilitzar-api-pokemon/static/media/NOPOKEHERE.788f0626ff5c3339ab61.png",
-    "index.html": "/repte-4-utilitzar-api-pokemon/index.html",
-    "main.ed7f72c8.css.map": "/repte-4-utilitzar-api-pokemon/static/css/main.ed7f72c8.css.map",
-    "main.409529f4.js.map": "/repte-4-utilitzar-api-pokemon/static/js/main.409529f4.js.map",
-    "787.b701888c.chunk.js.map": "/repte-4-utilitzar-api-pokemon/static/js/787.b701888c.chunk.js.map"
+    "main.css": "/Hackathon-Pokemon/static/css/main.ed7f72c8.css",
+    "main.js": "/Hackathon-Pokemon/static/js/main.56f71ef9.js",
+    "static/js/787.b701888c.chunk.js": "/Hackathon-Pokemon/static/js/787.b701888c.chunk.js",
+    "static/media/NOPOKEHERE.png": "/Hackathon-Pokemon/static/media/NOPOKEHERE.788f0626ff5c3339ab61.png",
+    "index.html": "/Hackathon-Pokemon/index.html",
+    "main.ed7f72c8.css.map": "/Hackathon-Pokemon/static/css/main.ed7f72c8.css.map",
+    "main.56f71ef9.js.map": "/Hackathon-Pokemon/static/js/main.56f71ef9.js.map",
+    "787.b701888c.chunk.js.map": "/Hackathon-Pokemon/static/js/787.b701888c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.ed7f72c8.css",
-    "static/js/main.409529f4.js"
+    "static/js/main.56f71ef9.js"
   ]
 }
